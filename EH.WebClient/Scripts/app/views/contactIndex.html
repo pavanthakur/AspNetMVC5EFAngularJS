@@ -1,0 +1,50 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h1>Contacts</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-success" role="button" href="#/contacts/new">Add new contact <span class="glyphicon glyphicon-plus"></span></a>        
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-striped table-hover table-responsive">
+            <thead class="bg-primary">
+                <tr>
+                    <th>#</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>PhoneNumber</th>
+                    <th>StatusName</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in contacts">
+                    <td>{{contact.Id}}</td>
+                    <td>{{contact.FirstName}}</td>
+                    <td>{{contact.LastName}}</td>
+                    <td>{{contact.Email}}</td>
+                    <td>{{contact.PhoneNumber}}</td>
+                    <td>{{contact.StatusName}}</td>
+                    <td>
+                        <a class="btn btn-success" role="button" href="#/contacts/{{contact.Id}}/edit">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a class="btn btn-danger" role="button" ng-click="deletecontact(contact.Id)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form name="contactForm" role="form" class="form-horizontal" novalidate ng-submit="submit()">
+            <fieldset>
+                <legend>{{formTitle}}</legend>
+                <div class="form-group" ng-show="!isNew">
+                    <label for="inputId" class="col-md-2 control-label">Id</label>
+                    <div class="col-md-1">
+                        <input type="text" class="form-control" name="inputId" value="{{contact.Id}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': contactForm.inputFirstName.$invalid}">
+                    <label for="inputFirstName" class="col-md-2 control-label">First Name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputFirstName" placeholder="Enter contact name here ..." required ng-model="contact.FirstName">
+                    </div>
+                    <div class="col-md-2">
+                        <span ng-show="contactForm.inputFirstName.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': contactForm.inputLastName.$invalid}">
+                    <label for="inputLastName" class="col-md-2 control-label">Last Name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputLastName" placeholder="Enter contact name here ..." required ng-model="contact.LastName">
+                    </div>
+                    <div class="col-md-2">
+                        <span ng-show="contactForm.inputLastName.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': contactForm.inputEmail.$invalid}">
+                    <label for="inputEmail" class="col-md-2 control-label">Email</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputEmail" placeholder="Enter contact name here ..." required ng-model="contact.Email">
+                    </div>
+                    <div class="col-md-2">
+                        <span ng-show="contactForm.inputEmail.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': contactForm.inputPhoneNumber.$invalid}">
+                    <label for="inputPhoneNumber" class="col-md-2 control-label">Phone Number</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputPhoneNumber" placeholder="Enter contact name here ..." required ng-model="contact.PhoneNumber">
+                    </div>
+                    <div class="col-md-2">
+                        <span ng-show="contactForm.inputPhoneNumber.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': contactForm.selectStatusType.$invalid}">
+                    <label for="selectStatusType" class="col-md-2 control-label">Status Type</label>
+                    <div class="col-md-4">
+                        <select class="form-control" name="selectStatusType" required ng-model="contact.StatusID" ng-options="statusType.Id as statusType.Type for statusType in statusTypes">
+                            <option value="">Please select a contact StatusType ...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <span ng-show="contactForm.selectStatusType.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" ng-disabled="contactForm.$invalid" class="btn btn-primary">{{formTitle}}</button>
+                        <button type="button" class="btn" ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

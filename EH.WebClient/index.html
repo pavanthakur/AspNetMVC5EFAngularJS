@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Contact System</title>
+    <link href="content/bootstrap.css" rel="stylesheet" />
+    <link href="content/app/app.css" rel="stylesheet" />
+</head>
+<body ng-controller="applicationController">
+    <header>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="col-md-5">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header" style="vertical-align:middle">
+                        <a class="navbar-brand" href="#/">Home</a>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div style="margin: 0px auto;">
+                        <span class="navbar-brand"> Welcome to Contact System</span>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <section>
+        <div class="container" ng-view>
+        </div>
+    </section>
+
+    <script src="Scripts/Vendors/moment.js"></script>
+    <script src="Scripts/Vendors/angular.js"></script>
+    <script src="Scripts/Vendors/angular-route.js"></script>    
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="Scripts/app/app.js"></script>
+    <script src="Scripts/app/services/contactService.js"></script>
+    <script src="Scripts/app/controllers/applicationController.js"></script>
+    <script src="Scripts/app/controllers/contactIndexController.js"></script>
+    <script src="Scripts/app/controllers/contactEditController.js"></script>
+</body>
+</html>
